@@ -59,7 +59,7 @@ namespace EcommerceAPI.Controllers
             return BadRequest(new { message = "Invalid login" });
         }
 
-        private string GenerateToken(User user)
+        public string GenerateToken(User user)
         {
             var claims = new[]
             {
