@@ -27,6 +27,9 @@ namespace EcommerceAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var user = new User
             {
                 UserName = model.Email,
@@ -59,7 +62,7 @@ namespace EcommerceAPI.Controllers
             return BadRequest(new { message = "Invalid login" });
         }
 
-        public string GenerateToken(User user)
+        private string GenerateToken(User user)
         {
             var claims = new[]
             {
