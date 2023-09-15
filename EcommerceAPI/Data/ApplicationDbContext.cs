@@ -12,7 +12,7 @@ namespace EcommerceAPI.Data
         }
 
         public DbSet<User> Users { get; set; }
-        //public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
         //public DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -31,9 +31,9 @@ namespace EcommerceAPI.Data
             //    .HasForeignKey(t => t.UserId)
             //    .OnDelete(DeleteBehavior.Cascade);
 
-            //builder.Entity<Product>()
-            //    .Property(p => p.Price)
-            //    .HasColumnType("decimal(18, 2)");
+            builder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(18, 2)");
 
             //builder.Entity<Transaction>()
             //    .Property(a => a.Amount)

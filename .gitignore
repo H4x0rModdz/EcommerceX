@@ -366,7 +366,7 @@ FodyWeavers.xsd
 appsettings.Development.json
 
 # Exclude Migrations folder
-/Migrations/
+/EcommerceAPI/Migrations/
 /EcommerceAPI/appsettings.Development.json
 EcommerceAPI/Migrations/20230831124013_InitialDatabase.cs
 EcommerceAPI/Migrations/20230831124013_InitialDatabase.Designer.cs

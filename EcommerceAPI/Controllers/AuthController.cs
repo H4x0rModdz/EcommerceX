@@ -36,7 +36,11 @@ namespace EcommerceAPI.Controllers
                 Email = model.Email,
                 FullName = model.FullName,
                 Address = model.Address,
-                BirthDate = model.BirthDate
+                BirthDate = model.BirthDate,
+                CreatedAt = DateTime.Now,
+                EmailConfirmed = true,
+                UpdatedAt = DateTime.Now,
+                IsSeller = false
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
