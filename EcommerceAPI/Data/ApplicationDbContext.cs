@@ -19,11 +19,11 @@ namespace EcommerceAPI.Data
         {
             base.OnModelCreating(builder);
 
-            //builder.Entity<User>()
-            //    .HasMany(u => u.Products)
-            //    .WithOne(p => p.User)
-            //    .HasForeignKey(p => p.UserId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<User>()
+                .HasMany(u => u.Products)
+                .WithOne(p => p.User)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Restrict); // Restrict is used to prevent cascading deletion of products when a user is deleted.
 
             //builder.Entity<User>()
             //    .HasMany(u => u.Transactions)

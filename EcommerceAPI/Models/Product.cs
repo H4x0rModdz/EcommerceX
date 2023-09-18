@@ -14,6 +14,8 @@ namespace EcommerceAPI.Models
         [StringLength(255, ErrorMessage = "The Description field must not exceed 255 characters.")]
         public string Description { get; set; }
 
+        public string Quantity { get; set; }
+
         [Required(ErrorMessage = "The Price field is required.")]
         [Range(0.01, double.MaxValue, ErrorMessage = "The Price field must be greater than zero.")]
         public decimal Price { get; set; }
@@ -25,5 +27,11 @@ namespace EcommerceAPI.Models
 
         [Display(Name = "Is Available")]
         public bool IsAvailable { get; set; }
+
+        public string UserId { get; set; }
+
+        public string UserEmail { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace EcommerceAPI.Models
         [DataType(DataType.Date)]
         public DateTime UpdatedAt { get; set; }
 
-        //public virtual ICollection<Product>? Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
         //public virtual ICollection<Transaction>? Transactions { get; set; }
     }

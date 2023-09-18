@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EcommerceAPI.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using EcommerceAPI.Models;
 using Newtonsoft.Json;
 
 namespace EcommerceAPI.Data
@@ -15,7 +15,7 @@ namespace EcommerceAPI.Data
                 if (!context.Users.Any())
                 {
                     var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
-                    var json = File.ReadAllText("Data/SeedData.json");
+                    var json = File.ReadAllText("Data/UsersSeed.json");
                     var seedData = JsonConvert.DeserializeObject<SeedModel>(json);
 
                     foreach (var userData in seedData.Users)
@@ -26,20 +26,29 @@ namespace EcommerceAPI.Data
 
                 if (!context.Products.Any())
                 {
-                    var json = File.ReadAllText("Data/SeedData.json");
-                    var seedData = JsonConvert.DeserializeObject<SeedModel>(json);
+                    var jsonProducts = File.ReadAllText("Data/ProductsSeed.json");
+                    var seedProducts = JsonConvert.DeserializeObject<SeedModel>(jsonProducts);
 
-                    foreach (var productData in seedData.Products)
+                    foreach (var productData in seedProducts.Products)
                     {
-                        var product = new Product
+                        var user = context.Users.FirstOrDefault(u => u.Email == productData.UserEmail);
+
+                        if (user != null)
                         {
-                            Name = productData.Name,
-                            Description = productData.Description,
-                            Price = productData.Price,
-                            CreatedDate = productData.CreatedDate,
-                            IsAvailable = productData.IsAvailable,
-                        };
-                        context.Products.Add(product);
+                            var product = new Product
+                            {
+                                Name = productData.Name,
+                                Description = productData.Description,
+                                Price = productData.Price,
+                                Quantity = productData.Quantity,
+                                CreatedDate = productData.CreatedDate,
+                                IsAvailable = productData.IsAvailable,
+                                UserId = user.Id,
+                                UserEmail = productData.UserEmail
+                            };
+
+                            context.Products.Add(product);
+                        }
                     }
 
                     context.SaveChanges();

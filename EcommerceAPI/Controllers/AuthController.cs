@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using EcommerceAPI.Models;
 using EcommerceAPI.Models.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -64,6 +65,15 @@ namespace EcommerceAPI.Controllers
             }
 
             return BadRequest(new { message = "Invalid login" });
+        }
+
+        [HttpPost("logout")]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return Ok(new { message = "Logout successful" });
         }
 
         private string GenerateToken(User user)

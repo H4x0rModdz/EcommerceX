@@ -1,0 +1,22 @@
+{
+  "Products": [
+    {
+      "Name": "IPhone 14 Pro Max",
+      "Description": "Description Example",
+      "Quantity": 10,
+      "Price": 14000.00,
+      "CreatedDate": "2023-09-15T11:00:00Z",
+      "IsAvailable": true,
+      "UserEmail": "lucas@email.com"
+    },
+    {
+      "Name": "Example",
+      "Description": "Description Example",
+      "Quantity": 9999,
+      "Price": 10.00,
+      "CreatedDate": "2023-09-15T11:00:00Z",
+      "IsAvailable": true,
+      "UserEmail": "pedro@email.com"
+    }
+  ]
+}

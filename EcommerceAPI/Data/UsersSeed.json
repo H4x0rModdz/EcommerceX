@@ -1,0 +1,52 @@
+{
+  "Users": [
+    {
+      "UserName": "lucas@email.com",
+      "Email": "lucas@email.com",
+      "FullName": "Lucas Lobo",
+      "IsSeller": true,
+      "CreatedAt": "2023-09-15T10:00:00Z",
+      "Address": "Home",
+      "Balance": 1000000.00,
+      "BirthDate": "1990-01-01",
+      "EmailConfirmed": true,
+      "NormalizedEmail": "LUCAS@EMAIL.COM",
+      "NormalizedUserName": "LUCAS@EMAIL.COM",
+      "PhoneNumber": "5521988893232",
+      "PhoneNumberConfirmed": true,
+      "Password": "P$ssw0rd123"
+    },
+    {
+      "UserName": "pedro@email.com",
+      "Email": "pedro@email.com",
+      "FullName": "Pedro Figs",
+      "IsSeller": true,
+      "CreatedAt": "2023-09-15T10:00:00Z",
+      "Address": "Home 2",
+      "Balance": 1000000.00,
+      "BirthDate": "1990-01-01",
+      "EmailConfirmed": true,
+      "NormalizedEmail": "PEDRO@EMAIL.COM",
+      "NormalizedUserName": "PEDRO@EMAIL.COM",
+      "PhoneNumber": "5521988893233",
+      "PhoneNumberConfirmed": true,
+      "Password": "P$ssw0rd123"
+    },
+    {
+      "UserName": "customer@email.com",
+      "Email": "customer@email.com",
+      "FullName": "Customer",
+      "IsSeller": false,
+      "CreatedAt": "2023-09-15T10:00:00Z",
+      "Address": "Home 3",
+      "Balance": 1000000.00,
+      "BirthDate": "1990-01-01",
+      "EmailConfirmed": true,
+      "NormalizedEmail": "CUSTOMER@EMAIL.COM",
+      "NormalizedUserName": "CUSTOMER@EMAIL.COM",
+      "PhoneNumber": "5521988822288",
+      "PhoneNumberConfirmed": true,
+      "Password": "P$ssw0rd123"
+    }
+  ]
+}
