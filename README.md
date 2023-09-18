@@ -48,6 +48,10 @@ Our Ecommerce project aims to revolutionize online shopping by providing a robus
 3. Build the Docker containers: `docker-compose build`.
 4. Run the containers: `docker-compose up`.
 
+or
+
+1. Just press F5 button
+
 ### Configuration
 
 - API configuration: `appsettings.json`
