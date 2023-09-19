@@ -1,4 +1,5 @@
-﻿using EcommerceAPI.Models;
+﻿using EcommerceAPI.Data;
+using EcommerceAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ namespace EcommerceAPI.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly UserManager<User> _userManager;
+        private readonly ApplicationDbContext _context;
 
         public UserRepository(UserManager<User> userManager)
         {
@@ -25,6 +27,8 @@ namespace EcommerceAPI.Repositories
 
         public async Task<IdentityResult> UpdateAsync(User user)
         {
+            await _context.Entry(user).Collection(u => u.Products).LoadAsync();
+
             return await _userManager.UpdateAsync(user);
         }
 

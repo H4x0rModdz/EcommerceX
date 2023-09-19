@@ -1,4 +1,5 @@
-﻿using EcommerceAPI.Models;
+﻿using EcommerceAPI.Data;
+using EcommerceAPI.Models;
 using EcommerceAPI.Repositories;
 using Microsoft.AspNetCore.Identity;
 

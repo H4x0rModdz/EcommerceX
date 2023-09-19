@@ -31,6 +31,9 @@ namespace EcommerceAPI.Services
             productToAdd.Price = product.Price;
             productToAdd.CreatedDate = DateTime.Now;
             productToAdd.IsAvailable = product.IsAvailable;
+            productToAdd.Quantity = product.Quantity;
+            productToAdd.User = product.User;
+            productToAdd.UserEmail = product.UserEmail;
 
             await _productRepository.AddProductAsync(productToAdd);
         }
@@ -43,6 +46,9 @@ namespace EcommerceAPI.Services
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;
             existingProduct.IsAvailable = product.IsAvailable;
+            existingProduct.Quantity = product.Quantity;
+            existingProduct.User = product.User;
+            existingProduct.UserEmail = product.UserEmail;
 
             await _productRepository.UpdateProductAsync(existingProduct);
         }
