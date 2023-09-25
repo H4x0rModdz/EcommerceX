@@ -53,6 +53,34 @@ namespace EcommerceAPI.Data
 
                     context.SaveChanges();
                 }
+
+                if (!context.Transactions.Any())
+                {
+                    var jsonTransactions = File.ReadAllText("Data/TransactionsSeed.json");
+                    var seedTransactions = JsonConvert.DeserializeObject<List<Transaction>>(jsonTransactions);
+
+                    foreach (var transactionData in seedTransactions)
+                    {
+                        var user = context.Users.FirstOrDefault(u => u.Email == transactionData.UserEmail);
+                        var product = context.Products.FirstOrDefault(p => p.Name == transactionData.ProductName);
+
+                        if (product != null)
+                        {
+                            var transaction = new Transaction
+                            {
+                                User = user,
+                                Product = product,
+                                TransactionDate = transactionData.TransactionDate,
+                                Price = transactionData.Price,
+                                StatusId = transactionData.StatusId
+                            };
+
+                            context.Transactions.Add(transaction);
+                        }
+                    }
+
+                    context.SaveChanges();
+                }
             }
         }
     }
