@@ -1,10 +1,37 @@
 ﻿@page
-@model IndexModel
+@model IEnumerable<EcommerceAPI.Models.User>
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<h2>Users from API:</h2>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>FullName</th>
+        <th>Address</th>
+        <th>BirthDate</th>
+        <th>IsSeller</th>
+        <th>Balance</th>
+        <th>CreatedAt</th>
+        <th>UpdatedAt</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.FullName</td>
+            <td>@user.Address</td>
+            <td>@user.BirthDate</td>
+            <td>@user.IsSeller</td>
+            <td>@user.Balance</td>
+            <td>@user.CreatedAt</td>
+            <td>@user.UpdatedAt</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -28,6 +28,6 @@ namespace EcommerceAPI.Models
 
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
-        //public virtual ICollection<Transaction>? Transactions { get; set; }
+        public virtual ICollection<Transaction>? Transactions { get; set; }
     }
 }
