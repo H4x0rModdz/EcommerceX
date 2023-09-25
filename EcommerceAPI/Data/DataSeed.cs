@@ -44,7 +44,8 @@ namespace EcommerceAPI.Data
                                 CreatedDate = productData.CreatedDate,
                                 IsAvailable = productData.IsAvailable,
                                 UserId = user.Id,
-                                UserEmail = productData.UserEmail
+                                UserEmail = productData.UserEmail,
+                                User = user
                             };
 
                             context.Products.Add(product);
@@ -57,9 +58,9 @@ namespace EcommerceAPI.Data
                 if (!context.Transactions.Any())
                 {
                     var jsonTransactions = File.ReadAllText("Data/TransactionsSeed.json");
-                    var seedTransactions = JsonConvert.DeserializeObject<List<Transaction>>(jsonTransactions);
+                    var seedTransactions = JsonConvert.DeserializeObject<SeedModel>(jsonTransactions);
 
-                    foreach (var transactionData in seedTransactions)
+                    foreach (var transactionData in seedTransactions.Transactions)
                     {
                         var user = context.Users.FirstOrDefault(u => u.Email == transactionData.UserEmail);
                         var product = context.Products.FirstOrDefault(p => p.Name == transactionData.ProductName);
@@ -72,10 +73,10 @@ namespace EcommerceAPI.Data
                                 Product = product,
                                 TransactionDate = transactionData.TransactionDate,
                                 Price = transactionData.Price,
-                                StatusId = transactionData.StatusId,
                                 ProductName = transactionData.ProductName,
                                 Status = transactionData.Status,
-                                UserEmail = transactionData.UserEmail
+                                UserEmail = transactionData.UserEmail,
+                                Quantity = transactionData.Quantity
                             };
 
                             context.Transactions.Add(transaction);

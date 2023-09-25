@@ -14,7 +14,6 @@ namespace EcommerceAPI.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<TransactionStatus> TransactionStatuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -39,9 +38,8 @@ namespace EcommerceAPI.Data
                 .HasColumnType("decimal(18, 2)");
 
             builder.Entity<Transaction>()
-                .HasOne(t => t.Status)
-                .WithMany()
-                .HasForeignKey(t => t.StatusId);
+                .Property(p => p.Status)
+                .HasConversion<int>();
         }
     }
 }
