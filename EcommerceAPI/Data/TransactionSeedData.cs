@@ -1,6 +1,8 @@
-﻿namespace EcommerceAPI.Data
+﻿using EcommerceAPI.Models;
+
+namespace EcommerceAPI.Data
 {
-    public class TransactionSeedData
+    public class TransactionSeedData : Transaction
     {
     }
 }

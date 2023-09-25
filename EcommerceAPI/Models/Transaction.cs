@@ -1,7 +1,10 @@
-﻿namespace EcommerceAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EcommerceAPI.Models
 {
     public class Transaction
     {
+        [Key]
         public int Id { get; set; }
 
         public User User { get; set; }

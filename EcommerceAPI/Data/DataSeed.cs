@@ -72,7 +72,10 @@ namespace EcommerceAPI.Data
                                 Product = product,
                                 TransactionDate = transactionData.TransactionDate,
                                 Price = transactionData.Price,
-                                StatusId = transactionData.StatusId
+                                StatusId = transactionData.StatusId,
+                                ProductName = transactionData.ProductName,
+                                Status = transactionData.Status,
+                                UserEmail = transactionData.UserEmail
                             };
 
                             context.Transactions.Add(transaction);
