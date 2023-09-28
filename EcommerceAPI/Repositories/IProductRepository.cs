@@ -8,6 +8,8 @@ namespace EcommerceAPI.Repositories
 
         Task<Product> GetProductByIdAsync(int productId);
 
+        Task<Product> GetProductByNameAsync(string productName);
+
         Task AddProductAsync(Product product);
 
         Task UpdateProductAsync(Product product);

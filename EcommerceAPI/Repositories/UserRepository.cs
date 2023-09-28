@@ -25,6 +25,11 @@ namespace EcommerceAPI.Repositories
             return await _userManager.FindByIdAsync(id);
         }
 
+        public async Task<User> GetByEmailAsync(string userEmail)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+        }
+
         public async Task<IdentityResult> UpdateAsync(User user)
         {
             await _context.Entry(user).Collection(u => u.Products).LoadAsync();

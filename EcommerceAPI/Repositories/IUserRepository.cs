@@ -9,6 +9,8 @@ namespace EcommerceAPI.Repositories
 
         Task<User> GetByIdAsync(string id);
 
+        Task<User> GetByEmailAsync(string userEmail);
+
         Task<IdentityResult> UpdateAsync(User user);
 
         Task<IdentityResult> DeleteAsync(User user);
