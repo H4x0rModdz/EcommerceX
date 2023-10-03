@@ -28,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Products\" />
+    <Folder Include="Transactions\" />
     <Folder Include="Users\" />
   </ItemGroup>
 
