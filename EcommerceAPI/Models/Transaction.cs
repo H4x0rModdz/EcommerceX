@@ -17,7 +17,6 @@ namespace EcommerceAPI.Models
 
         public decimal Price { get; set; }
 
-
         public string UserEmail { get; set; }
         public string ProductName { get; set; }
 
