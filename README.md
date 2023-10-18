@@ -96,7 +96,7 @@ Our project follows a clean and modular design, separating concerns for scalabil
 Here are some exciting features we plan to implement in the future:
 
 1. **MySQL Implementation**: *Support for MySQL database for enhanced flexibility.*
-2. **SQLite Integration**: *Integrate SQLite for lightweight local development and testing.*
+2. **SQLite Integration**: *Integrate SQLite for lightweight local development and testing.* [DONE]
 3. **Web Pages Development**: *Create dynamic and responsive web pages for an immersive user experience.*
 4. **Test Suite Expansion**: *Enhance test coverage and reliability.*
 5. **Soon...**
